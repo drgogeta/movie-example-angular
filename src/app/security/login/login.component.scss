@@ -1,0 +1,30 @@
+.login {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 300px;
+    width: 250px;
+    &-header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    &-body {
+      &__form {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &-footer {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+  }
+}
