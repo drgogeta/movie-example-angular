@@ -60,8 +60,8 @@
           *ngFor="let movie of favoriteMovies"
           class="movie-card"
           [matTooltip]="movie.Title"
-          matRipple
-          matRippleColor="primary"
+          mat-button
+          (click)="viewDetail(movie.imdbID)"
         >
           <img mat-card-image class="movie-card__img" [src]="movie.Poster" />
           <mat-card-content class="movie-card__content">
