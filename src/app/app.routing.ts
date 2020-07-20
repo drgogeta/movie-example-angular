@@ -9,7 +9,7 @@ const routes: Routes = [
   // Security Module
   { path: 'movie', loadChildren: () => import('./movies/movies.module').then(mod => mod.MoviesModule), },
   // Unknown routes
-  // { path: '**', redirectTo: 'map', pathMatch: 'full' },
+  { path: '**', redirectTo: 'security', pathMatch: 'full' },
 ];
 
 @NgModule({
