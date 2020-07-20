@@ -55,13 +55,18 @@ export class SaveUserUtil {
   ];
 
   validateUser(data: LoginModel): Observable<UserModel> {
-    const user = this.listUsers.find(user => user.password === data.password && user.userName === data.userName)
-    if (!user) return throwError('User Not Found');
+    const userAuthentication = this.listUsers.find(
+      user =>
+        user.password === data.password && user.userName === data.userName
+    );
+    if (!userAuthentication) {
+      return throwError('User Not Found');
+    }
     return of({
-      userName: user.userName,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      age: user.age,
+      userName: userAuthentication.userName,
+      firstName: userAuthentication.firstName,
+      lastName: userAuthentication.lastName,
+      age: userAuthentication.age,
     });
   }
 
@@ -71,11 +76,11 @@ export class SaveUserUtil {
   }
 
   makeId(length) {
-    var result = '';
-    var characters =
+    let result = '';
+    const characters =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;

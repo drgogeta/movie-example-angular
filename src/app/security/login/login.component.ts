@@ -24,14 +24,14 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private _snackBar: MatSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       userName: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)])
-    })
+    });
   }
 
   ngOnDestroy(): void {
@@ -44,12 +44,12 @@ export class LoginComponent implements OnInit, OnDestroy {
       .subscribe({
         next: () => this.router.navigate(['/movie']),
         error: (err) => this.openSnackBar(err)
-      })
+      });
   }
 
   openSnackBar(message: string) {
     this.loginForm.reset();
-    this._snackBar.open(message, 'Close', {
+    this.snackBar.open(message, 'Close', {
       duration: 2000,
     });
   }

@@ -1,5 +1,6 @@
 // Components
 export * from './list';
+export * from './detail';
 // Models
 export * from './models';
 // Services

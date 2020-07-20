@@ -33,4 +33,5 @@ export interface MovieDetail {
 
 export const typesMovie = [
   'movie', 'series', 'episode'
-]
+];
+
