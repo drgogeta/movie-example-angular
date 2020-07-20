@@ -63,6 +63,10 @@ export class ListComponent implements OnInit {
     this.openSnackBar('Movie remove successful');
   }
 
+  viewDetail(movieId: string){
+
+  }
+
   openSnackBar(message: string) {
     this.searchForm.reset();
     this._snackBar.open(message, 'Close', {
