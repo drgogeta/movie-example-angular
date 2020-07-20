@@ -50,8 +50,12 @@ export class ListComponent implements OnInit {
   }
 
   addFavorite(movie: MovieDetail): void {
-    this.state.addFavoriteMovies(movie);
-    this.openSnackBar('Movie add successful');
+    try {
+      this.state.addFavoriteMovies(movie);
+      this.openSnackBar('Movie add successful');
+    } catch (err) {
+      this.openSnackBar(err);
+    }
   }
 
   removeFavorite(movie: MovieDetail): void {

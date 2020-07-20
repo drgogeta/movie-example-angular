@@ -59,14 +59,23 @@
         *ngFor="let movie of favoriteMovies"
         class="movie-card"
         [matTooltip]="movie.Title"
-        mat-button
-        (click)="viewDetail(movie.imdbID)"
       >
-        <img mat-card-image class="movie-card__img" [src]="movie.Poster" />
-        <mat-card-content class="movie-card__content">
-          <p>{{ movie.Year }}</p>
-          <p>{{ movie.Type }}</p>
-        </mat-card-content>
+        <div
+          matRipple
+          matRippleColor="primary"
+          (click)="viewDetail(movie.imdbID)"
+        >
+          <img
+            mat-card-image
+            class="movie-card__img"
+            [src]="movie.Poster"
+            onerror="this.src='assets/img/download.png'"
+          />
+          <mat-card-content class="movie-card__content">
+            <p>{{ movie.Year }}</p>
+            <p>{{ movie.Type }}</p>
+          </mat-card-content>
+        </div>
         <mat-card-actions class="movie-card__actions">
           <button mat-button color="accent" (click)="removeFavorite(movie)">
             <mat-icon aria-hidden="false" aria-label="add-favorites"
@@ -82,14 +91,23 @@
         *ngFor="let movie of movies.Search"
         class="movie-card"
         [matTooltip]="movie.Title"
-        matRipple
-        matRippleColor="primary"
       >
-        <img mat-card-image class="movie-card__img" [src]="movie.Poster" />
-        <mat-card-content class="movie-card__content">
-          <p>{{ movie.Year }}</p>
-          <p>{{ movie.Type }}</p>
-        </mat-card-content>
+        <div
+          matRipple
+          matRippleColor="primary"
+          (click)="viewDetail(movie.imdbID)"
+        >
+          <img
+            mat-card-image
+            class="movie-card__img"
+            [src]="movie.Poster"
+            onerror="this.src='assets/img/download.png'"
+          />
+          <mat-card-content class="movie-card__content">
+            <p>{{ movie.Year }}</p>
+            <p>{{ movie.Type }}</p>
+          </mat-card-content>
+        </div>
         <mat-card-actions class="movie-card__actions">
           <button
             mat-button

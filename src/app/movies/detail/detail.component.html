@@ -1,1 +1,59 @@
-<p>detail works!</p>
+<div class="detail">
+  <div class="detail-container container">
+    <div class="detail-container__previous">
+      <button mat-button (click)="previousPage()">
+        <mat-icon aria-hidden="false" aria-label="return">
+          keyboard_backspace
+        </mat-icon>
+      </button>
+    </div>
+    <mat-card
+      *ngIf="detailMovie$ | async as detail; else loading"
+      class="detail-container-card"
+    >
+      <div class="detail-container-card__img">
+        <img
+          mat-card-image
+          [src]="detail.Poster"
+          onerror="this.src='assets/img/download.png'"
+        />
+      </div>
+      <div class="detail-container-card-description">
+        <mat-card-header>
+          <mat-card-title>{{ detail.Title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="detail-container-card-description__detail">
+          <div><b>Year:</b> {{ detail.Year }}</div>
+          <div><b>Released:</b> {{ detail.Released }}</div>
+          <div><b>Runtime:</b> {{ detail.Runtime }}</div>
+          <div><b>Genre:</b> {{ detail.Genre }}</div>
+          <div><b>Director:</b> {{ detail.Director }}</div>
+          <div><b>Actors:</b> {{ detail.Actors }}</div>
+          <div><b>Awards:</b> {{ detail.Awards }}</div>
+          <div><b>Production:</b> {{ detail.Production }}</div>
+          <div>
+            <p>{{ detail.Writer }}</p>
+          </div>
+          <div>
+            <p>{{ detail.Plot }}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions class="detail-container-card-description__actions">
+          <button
+            mat-button
+            type="submit"
+            color="accent"
+            (click)="addFavorite(detail)"
+          >
+            <mat-icon aria-hidden="false" aria-label="add-favorites"
+              >add_circle_outline</mat-icon
+            >
+          </button>
+        </mat-card-actions>
+      </div>
+    </mat-card>
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+    </ng-template>
+  </div>
+</div>

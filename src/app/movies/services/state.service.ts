@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ListMoviesModel, MovieDetail } from '../models';
+import { StateUtils } from '../utils';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class StateService {
   }
 
   addFavoriteMovies(movie: MovieDetail): void {
+    StateUtils.validateExistMovie(movie, this.favoriteMovies.getValue());
     const newState = [...this.favoriteMovies.getValue(), movie];
     localStorage.setItem('favoriteMovies', JSON.stringify(newState));
     this.favoriteMovies.next(newState);

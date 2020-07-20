@@ -1,0 +1,53 @@
+.detail {
+  display: flex;
+  justify-content: center;
+  &-container {
+    &__previous {
+      position: absolute;
+      top: 65px;
+      left: 0px;
+    }
+    &-card {
+      display: flex;
+      // max-height: 370px;
+      &__img {
+        margin-right: 30px;
+        // max-width: 300px;
+        // width: 100%;
+        img {
+          // max-height: 400px;
+          height: auto;
+        }
+      }
+      &-description {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+          overflow: auto;
+          text-overflow: ellipsis;
+          text-align: justify;
+          width: 400px;
+          white-space: normal;
+        }
+        &__detail {
+          margin: 0;
+        }
+        &__actions {
+          position: absolute;
+          bottom: -20px;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.mat-card-title {
+  overflow: auto;
+  text-overflow: ellipsis;
+  text-align: center;
+  width: 400px;
+  white-space: normal;
+}
