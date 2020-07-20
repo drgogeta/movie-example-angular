@@ -1,0 +1,61 @@
+@import '~src/assets/scss/variables.scss';
+
+.list-movie {
+  display: flex;
+  justify-content: center;
+  &-container {
+    h1 {
+      margin-bottom: 0px;
+    }
+    &-favorites {
+      display: flex;
+      flex-direction: row;
+      overflow: auto;
+    }
+    &-form {
+      align-items: baseline;
+      display: flex;
+      justify-content: center;
+      &__input {
+        margin: 0 $space-elements;
+      }
+    }
+    &-result {
+      display: grid;
+      grid-template-columns: repeat(5, 20%);
+    }
+  }
+}
+
+.movie-card {
+  cursor: pointer;
+  max-width: 200px;
+  margin-bottom: 0;
+  margin: $space-elements;
+  height: auto;
+  width: 100%;
+  &__img {
+    max-height: 272px;
+  }
+  &__content {
+    display: flex;
+    p {
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      width: 200px;
+      white-space: nowrap;
+    }
+  }
+  &__actions {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+  }
+  &:hover {
+    -webkit-box-shadow: 0px 0px 15px -5px $box-shadow;
+    -moz-box-shadow: 0px 0px 15px -5px $box-shadow;
+    box-shadow: 0px 0px 15px -5px $box-shadow;
+  }
+}
