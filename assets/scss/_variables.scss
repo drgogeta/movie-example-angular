@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+
+// fonts
+$font-family-base: 'WorkSans', WorkSans;
+
+// font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// heading sizes
+$h1-size: 22px;
+$h2-size: 22px;
+$h3-size: 18px;
+$h4-size: 14px;
+$h5-size: 12px;
+
+$space-elements: 10px;
+
+$cyan-700: #00b8d4;
+
+$box-shadow: rgba(179,136,255,1);
+
+$full-radius: 200px;
