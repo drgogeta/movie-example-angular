@@ -20,11 +20,13 @@ import { InterceptorsService, SharedModule } from './shared';
     SharedModule
   ],
   providers: [
+    /*
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorsService,
       multi: true
     }
+    */
   ],
   bootstrap: [AppComponent]
 })
