@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { UserModel, LoginModel } from '../models';
-import { SaveUserUtil } from '../utils/save-user.util';
+import { SaveUserUtil } from '../utils';
 
 @Injectable()
 export class LoginService {

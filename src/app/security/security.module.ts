@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SecurityRouting } from './security.routing';
-import { LoginComponent } from './login/login.component';
-import { SharedModule } from '../shared/shared.module';
+import { LoginComponent } from './login';
+import { SharedModule } from '../shared';
 
 
 @NgModule({

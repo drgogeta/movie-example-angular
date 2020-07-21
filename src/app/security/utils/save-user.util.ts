@@ -1,5 +1,6 @@
 import { Observable, of, throwError } from 'rxjs';
 import { UserModel, LoginModel } from '../models';
+import { SessionUtils } from 'src/app/shared';
 
 export class SaveUserUtil {
   private listUsers = [
@@ -71,8 +72,8 @@ export class SaveUserUtil {
   }
 
   saveUser(user: UserModel): void {
-    sessionStorage.setItem('user', JSON.stringify(user));
-    sessionStorage.setItem('token', this.makeId(25));
+    SessionUtils.setToken(this.makeId(250));
+    SessionUtils.setUser(user);
   }
 
   makeId(length) {

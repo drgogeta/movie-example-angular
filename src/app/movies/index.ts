@@ -5,6 +5,8 @@ export * from './detail';
 export * from './models';
 // Services
 export * from './services';
+// utils
+export * from './utils';
 // Router
 export * from './movies.routing';
 // Module

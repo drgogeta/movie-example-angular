@@ -40,6 +40,7 @@
       <div>
         <button
           mat-flat-button
+          type="submit"
           color="primary"
           class="list-movie-container-form__button"
           [disabled]="searchForm.invalid"
@@ -109,15 +110,10 @@
           </mat-card-content>
         </div>
         <mat-card-actions class="movie-card__actions">
-          <button
-            mat-button
-            type="submit"
-            color="accent"
-            (click)="addFavorite(movie)"
-          >
-            <mat-icon aria-hidden="false" aria-label="add-favorites"
-              >add_circle_outline</mat-icon
-            >
+          <button mat-button color="accent" (click)="addFavorite(movie)">
+            <mat-icon aria-hidden="false" aria-label="add-favorites">
+              add_circle_outline
+            </mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>
