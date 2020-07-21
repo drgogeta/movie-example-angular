@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { UserModel } from 'src/app/security/models';
+import { Router } from '@angular/router';
+import { SessionUtils } from '../utils';
 
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.scss']
 })
-export class TemplateComponent {
+export class TemplateComponent implements OnInit {
+
+  user$: Observable<UserModel>;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -16,6 +21,15 @@ export class TemplateComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
+  ) {}
 
+  ngOnInit(): void {
+    this.user$ = of(SessionUtils.getUser());
+  }
+  closeSession(){
+    SessionUtils.closeSession(this.router);
+  }
 }

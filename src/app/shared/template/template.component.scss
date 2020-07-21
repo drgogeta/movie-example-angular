@@ -1,3 +1,5 @@
+@import '~src/assets/scss/variables.scss';
+
 .sidenav-container {
   height: 100%;
 }
@@ -14,4 +16,20 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.template-user {
+  display: flex;
+  flex-direction: column;
+  padding: $space-elements;
+  height: 100px;
+  font-size: $h4-size;
+  &__img {
+    border-radius: $full-radius;
+    -moz-border-radius: $full-radius;
+    -webkit-border-radius: $full-radius;
+    border: 3px solid $cyan-700;
+    padding: 5px 15px;
+    line-height: 10px;
+  }
 }
